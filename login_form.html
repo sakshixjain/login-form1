@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="website icon" type="png" href="lachlan-gowen-RZ5TKFpdaWM-unsplash.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+ 
+<div class="full">
+    <div id="contain">
+       <i class="fa-solid fa-moon icon2"></i> 
+       <!-- <i class="fa-solid fa-sun icon3"></i>  -->
+       <h1 id="h1">Contact Us</h1>
+      </div>  
+        <p id="p" style="text-wrap: balance; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nisi vel dolorum facere odit delectus velit sunt neque, quae numquam tempore,<br> mollitia eveniet cupiditate enim omnis reiciendis! Consectetur, maiores doloribus!</p>
+   
+    <div class="container3">
+        <div id="con3">
+        <div>
+    <i class="fa-solid icon fa-house-user"></i>
+    <span style=" font-size: 20px; color: rgba(36, 54, 136, 0.842)">Address : </span><br>
+    <span style="margin: 85px;font-size: 18px;">5174-hdsf jfwif</span>
+</div>
+<div>
+    <i class="fa-solid icon fa-phone-volume"></i>
+<span style="font-size: 20px; color: rgba(4, 25, 119, 0.842)">Phone :</span><br>
+<span style="margin: 85px; font-size: 18px;">9843746332</span>
+</div>
+<div>
+   
+    <i class="fa-solid icon fa-envelope"></i>
+ <span style="font-size: 20px;  color:rgba(4, 25, 119, 0.842)">Email :</span><br>
+ <span style="margin: 81px;font-size: 18px;">ufeghu@gmail.com</span>
+</div>
+<div>
+    
+</div>
+</div>
+    <div class="container">
+        
+        <form id="form">
+        <div id="space1">
+            <h1>Login Here</h1>
+        </div>
+           <div id="space">
+            <input type="text"  id="name" required name="name" placeholder=" Full Name" required>
+        </div>
+           <div id="space">
+          <input type="email" id="email" required name="email" required placeholder=" Email / Username" required>
+        </div>
+            <div id="space" style=" position: relative;">
+                <input style="padding-right:10px ;" type="password"  id="password" class="eye" required name="password" placeholder=" Password" required>
+                <i  class="fa-solid fa-eye toggle hideshow"></i>
+        </div>
+          <div id="space">
+            <input type="text" maxlength="10" id="telephone" title="Ten digits code" placeholder=" Phone Number" required> 
+               
+
+        </div>
+        <div >
+            <button type="button" class="btn" onclick="register()">Register</button>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div></div>
+    </form>
+    </div>
+    <div class="container2">
+        <p id="para">
+            sending Please wait 
+        </p>
+    </div>
+    <script>
+  
+        let eye = document.querySelector(".toggle");
+        let password= document.querySelector(".eye");   
+       
+        eye.addEventListener("click",()=>{
+        if(password.type==="password"){
+            password.type="text";
+            eye.classList.replace("fa-eye-slash", "fa-eye");
+        }
+        else{
+            password.type="password";
+            eye.classList.replace("fa-eye", "fa-eye-slash");
+        }
+        })
+  
+      function register(e){  
+        
+      let form = document.querySelector('form');
+      let para= document.querySelector('#para');
+      let container1= document.querySelector(".container");
+       let container2= document.querySelector(".container2");
+       let container3= document.querySelector(".container3");
+       let container4= document.querySelector("#contain");
+        var number = document.getElementById("telephone").value;
+       var mail = document.getElementById("email").value.indexOf("@");
+
+       if ((document.getElementById('name').value=="") || (document.getElementById('email').value=="") || (document.getElementById('password').value=="") ||(document.getElementById('telephone').value==""))
+	{
+	//Update the sending status.
+		alert("Please fill in all forms. Thanks.");
+	return false;
+	}
+    else if (isNaN(number) || number ==10 ) {
+    alert("The phone number must be a number ");
+ return false;
+  }
+ else if (mail == -1) {
+  alert("Not a valid e-mail!");
+  return false;
+}
+    else {
+	//Update the sending status.
+    container1.style.display="none";
+    container3.style.display="none";
+   para.innerHTML='Thank You for your Registeration ';  // yaha addeventlistener thodi ayega 
+   container2.style.display = "block";
+  	
+	}
+
+    }    
+    let mode = document.querySelector('.icon2');
+    let currMode = "light";
+    let body = document.querySelector("body");
+mode.addEventListener("click",()=>{
+    if(currMode==="light"){
+        currMode="dark";
+        mode.classList.replace("fa-moon", "fa-sun"); body.classList.add("dark");
+        body.classList.remove("light");
+            container1.classList.add("dark");
+    }
+    else{
+        currMode= "light";
+         mode.classList.replace("fa-sun", "fa-moon");
+         body.classList.add("light");
+         body.classList.remove("dark");
+    }
+    console.log(currMode);
+
+})
+
+    </script>
+</body>
+</html>
