@@ -161,7 +161,7 @@ display: flex;
 color: rgb(63, 61, 61);
 display: flex;
 justify-content: center;
-margin-top: 0;
+/* margin-top: 0; */
 }
 #p{
     color: rgb(75, 70, 70);
@@ -189,7 +189,7 @@ align-items: end;
 justify-content: end;
 font-size: 25px;
 padding: 5px;
-margin: 12px;
+margin: 10px;
 cursor: pointer;
 }
 #contain{
