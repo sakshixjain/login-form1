@@ -193,7 +193,7 @@ margin: 10px;
 cursor: pointer;
 }
 #contain{
-display: flex;
+display: inline;
 justify-content: flex-end;
 text-align: end;
 }
